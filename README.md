@@ -11,6 +11,17 @@
 
 
 ````
-# to run local server (assuming npm http-server) :
+# to run local https server (assuming npm http-server) :
 http-server -p  9999   -S .
+
+# then open your browser to "https://localhost:9999/"
+# note - you may have to use chrome's Advanced feature to access site
+# from the chrome Advanced setting - use 'proceed to localhost (unsafe)
+
 ````
+
+## TODO
+* explore : https://letsencrypt.org/ rather than self-signed certs
+* figure out why A-Frame seems to disregard some events
+* minimal 'paint' of geometric figures
+* combining figures
