@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aframe Demo</title>
+  </head>
+
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script>
+    AFRAME.registerComponent('change-color-on-hover', {
+      schema: {
+        color: {default: 'red'}
+      },
+
+
+      init: function () {
+
+
+        var data = this.data;
+        data.lastColor = '#cc2222';
+        var el = this.el;  // <a-box>
+        var defaultColor = el.getAttribute('material').color;
+
+        el.addEventListener('mouseenter', function () {
+         el.setAttribute('color', data.color);
+          //el.setAttribute('color', "#11ffcc");
+          console.log(`set color to : ${  el.getAttribute('color')}`);
+        });
+
+
+        el.addEventListener('click', function () {
+         //el.setAttribute('color', data.color);
+        //   el.setAttribute('color', "#11ffff");
+        //   console.log(`set color to : ${  el.getAttribute('color')}`);
+        // });
+        //
+        //
+        // el.addEventListener('keydown', function () {
+          //let cur =  el.getAttribute('color');
+           let cur = data.lastColor;
+
+          let red = parseInt(cur.replace(/.(..).*/,"$1"),16);
+          let rednew = ((red + 7) % 255).toString(16);
+          if (rednew.length < 2) {
+             rednew = "0" + rednew;
+          }
+          console.log(`rednew=  : ${ rednew}`);
+          let next = cur.replace(/...(.*)/,`#${rednew}$1`);
+          data.lastColor = next;
+          el.setAttribute('color', next);
+          //el.setAttribute('color', "#11ffcc");
+          console.log(`set color to next : ${  el.getAttribute('color')}`);
+        });
+
+
+        el.addEventListener('mouseleave', function () {
+
+          el.setAttribute('color', defaultColor);
+            console.log(`set color to : ${  el.getAttribute('color')}`);
+        });
+
+        console.log('initialized');
+      }
+    });
+  </script>
+
+  <body>
+    <a-scene>
+      <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue"></a-box>
+
+      <a-camera>
+      <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
