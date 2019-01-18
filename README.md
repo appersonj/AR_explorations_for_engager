@@ -1,6 +1,9 @@
-# NOTE - Superceded by stuff on BitBucket (back when they had better "free group" policies) 
-see:  https://bitbucket.org/npdgroupc/ar_explorations_for_engager/src/master/
-also : https://npdgroupc.bitbucket.io/  (small tech demos for engager)
+## NOTE - Superceded by stuff on BitBucket (back when they had better "free group" policies) 
+
+* see:  https://bitbucket.org/npdgroupc/ar_explorations_for_engager/src/master/
+* also : https://npdgroupc.bitbucket.io/  (small tech demos for engager)
+
+## (old, deprecated stuff) 
 
 # AR_explorations_for_engager
 
